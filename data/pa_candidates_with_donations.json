@@ -1,0 +1,582 @@
+[
+  {
+    "name": "BACH, KENNETH JAMES MR.",
+    "candidate_id": "H4PA14080",
+    "committees": [
+      {
+        "committee_id": "C00843706",
+        "name": "FRIENDS OF KEN BACH"
+      }
+    ]
+  },
+  {
+    "name": "BAKER, DAVID",
+    "candidate_id": "H4PA11078",
+    "committees": [
+      {
+        "committee_id": "C00846717",
+        "name": "DAVE BAKER FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "BARTOS, JEFFREY A",
+    "candidate_id": "S8PA00262",
+    "committees": [
+      {
+        "committee_id": "C00638452",
+        "name": "BARTOS FOR SENATE INC"
+      },
+      {
+        "committee_id": "C00769471",
+        "name": "BARTOS FOR US SENATE INC"
+      }
+    ]
+  },
+  {
+    "name": "BAUMLIN, KEVIN DR.",
+    "candidate_id": "S2PA00455",
+    "committees": [
+      {
+        "committee_id": "C00775247",
+        "name": "DR. BAUMLIN FOR PA"
+      }
+    ]
+  },
+  {
+    "name": "BOYLE, BRENDAN F",
+    "candidate_id": "H4PA13199",
+    "committees": [
+      {
+        "committee_id": "C00543363",
+        "name": "CITIZENS FOR BOYLE"
+      }
+    ]
+  },
+  {
+    "name": "BRESNAHAN, ROB",
+    "candidate_id": "H4PA08124",
+    "committees": [
+      {
+        "committee_id": "C00852137",
+        "name": "ROB FOR PA"
+      }
+    ]
+  },
+  {
+    "name": "BROADHURST, JOHN",
+    "candidate_id": "H4PA10112",
+    "committees": [
+      {
+        "committee_id": "C00853853",
+        "name": "BROADHURST FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "CODER, KATHY",
+    "candidate_id": "H2PA17186",
+    "committees": [
+      {
+        "committee_id": "C00813444",
+        "name": "CODER FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "COPLEN, RICK",
+    "candidate_id": "H2PA10116",
+    "committees": [
+      {
+        "committee_id": "C00807917",
+        "name": "FRIENDS OF RICK COPLEN"
+      },
+      {
+        "committee_id": "C00833731",
+        "name": "FRIENDS OF RICK COPLEN"
+      }
+    ]
+  },
+  {
+    "name": "DANIELS, TEDDY",
+    "candidate_id": "H0PA08197",
+    "committees": [
+      {
+        "committee_id": "C00713511",
+        "name": "TEDDY DANIELS FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "DEAN, MADELEINE",
+    "candidate_id": "H8PA04116",
+    "committees": [
+      {
+        "committee_id": "C00670844",
+        "name": "MAD 4 PA PAC"
+      }
+    ]
+  },
+  {
+    "name": "DELUZIO, CHRISTOPHER",
+    "candidate_id": "H2PA17103",
+    "committees": [
+      {
+        "committee_id": "C00787648",
+        "name": "CHRIS DELUZIO FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "DEMARCO, SAMUEL III",
+    "candidate_id": "H2PA17178",
+    "committees": [
+      {
+        "committee_id": "C00807537",
+        "name": "DEMARCO FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "DZIADOS, CHRISTOPHER RYAN",
+    "candidate_id": "H4PA14106",
+    "committees": [
+      {
+        "committee_id": "C00865600",
+        "name": "DZIADOS FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "ENTIN, ALEX",
+    "candidate_id": "H2PA01149",
+    "committees": [
+      {
+        "committee_id": "C00804021",
+        "name": "SUPPORTERS OF ALEX ENTIN"
+      }
+    ]
+  },
+  {
+    "name": "EVANS, DWIGHT",
+    "candidate_id": "H6PA02171",
+    "committees": [
+      {
+        "committee_id": "C00591065",
+        "name": "DWIGHT EVANS FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "FANELLI, STEVE",
+    "candidate_id": "H2PA06163",
+    "committees": [
+      {
+        "committee_id": "C00782789",
+        "name": "STEVE FANELLI FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "FERMO, PAUL",
+    "candidate_id": "H2PA01107",
+    "committees": [
+      {
+        "committee_id": "C00792143",
+        "name": "PAUL FERMO FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "FETTERMAN, JOHN KARL",
+    "candidate_id": "S6PA00274",
+    "committees": [
+      {
+        "committee_id": "C00765800",
+        "name": "FETTERMAN FOR PA"
+      },
+      {
+        "committee_id": "C00586578",
+        "name": "FETTERMAN FOR SENATE"
+      },
+      {
+        "committee_id": "C00822445",
+        "name": "PROGRESS IV AMERICA"
+      }
+    ]
+  },
+  {
+    "name": "FITZPATRICK, BRIAN",
+    "candidate_id": "H6PA08277",
+    "committees": [
+      {
+        "committee_id": "C00607416",
+        "name": "BRIAN FITZPATRICK FOR ALL OF US"
+      }
+    ]
+  },
+  {
+    "name": "GALE, SEAN",
+    "candidate_id": "S2PA00372",
+    "committees": [
+      {
+        "committee_id": "C00769448",
+        "name": "GALE FOR SENATE"
+      }
+    ]
+  },
+  {
+    "name": "HOULAHAN, CHRISSY",
+    "candidate_id": "H8PA06087",
+    "committees": [
+      {
+        "committee_id": "C00685545",
+        "name": "AMC FUND"
+      },
+      {
+        "committee_id": "C00637371",
+        "name": "CHRISSY HOULAHAN FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "HUNT, ALEXANDRA",
+    "candidate_id": "H2PA03129",
+    "committees": [
+      {
+        "committee_id": "C00766238",
+        "name": "ALEXANDRA HUNT FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "ISSA, ALLEN",
+    "candidate_id": "H4PA07126",
+    "committees": [
+      {
+        "committee_id": "C00850826",
+        "name": "ALLEN ISSA FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "JEFFRIES, ROBERT",
+    "candidate_id": "S2PA00471",
+    "committees": [
+      {
+        "committee_id": "C00775924",
+        "name": "BOBBY JEFFRIES FOR US SENATE"
+      }
+    ]
+  },
+  {
+    "name": "JOYCE, JOHN",
+    "candidate_id": "H8PA13125",
+    "committees": [
+      {
+        "committee_id": "C00674259",
+        "name": "DR JOHN JOYCE FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "KELLY, GEORGE J JR",
+    "candidate_id": "H0PA03271",
+    "committees": [
+      {
+        "committee_id": "C00493577",
+        "name": "GREAT EIGHT COMMITTEE"
+      },
+      {
+        "committee_id": "C00545806",
+        "name": "KELLY-THOMPSON VICTORY FUND"
+      },
+      {
+        "committee_id": "C00578716",
+        "name": "KELLY-THOMPSON VICTORY FUND"
+      },
+      {
+        "committee_id": "C00474189",
+        "name": "MIKE KELLY FOR CONGRESS"
+      },
+      {
+        "committee_id": "C00495242",
+        "name": "PA + 5 COMMITTEE"
+      }
+    ]
+  },
+  {
+    "name": "KHALIL, ALEXANDRIA GLORIA",
+    "candidate_id": "S2PA00406",
+    "committees": [
+      {
+        "committee_id": "C00771170",
+        "name": "ALEX KHALIL FOR US SENATE"
+      }
+    ]
+  },
+  {
+    "name": "LANNI, LOU",
+    "candidate_id": "H0PA05086",
+    "committees": [
+      {
+        "committee_id": "C00715987",
+        "name": "LANNI FOR CONGRESS"
+      },
+      {
+        "committee_id": "C00797811",
+        "name": "LOU LANNI FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "LEE, SUMMER",
+    "candidate_id": "H2PA18200",
+    "committees": [
+      {
+        "committee_id": "C00791780",
+        "name": "SUMMER LEE FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "MACKENZIE, RYAN EDWARD",
+    "candidate_id": "H8PA15195",
+    "committees": [
+      {
+        "committee_id": "C00655175",
+        "name": "MACKENZIE FOR CONGRESS"
+      },
+      {
+        "committee_id": "C00846501",
+        "name": "MACKENZIE FOR CONGRESS COMMITTEE"
+      },
+      {
+        "committee_id": "C00858357",
+        "name": "MACKENZIE FOR CONGRESS-GTM NF PA07"
+      },
+      {
+        "committee_id": "C00856690",
+        "name": "MACKENZIE FOR PA-07 REPUBLICAN NOMINEE FUND 2024"
+      }
+    ]
+  },
+  {
+    "name": "MAURO, REGINA",
+    "candidate_id": "H2PA06189",
+    "committees": [
+      {
+        "committee_id": "C00801183",
+        "name": "REGINA MAURO FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "MCCORMICK, DAVE",
+    "candidate_id": "S2PA00661",
+    "committees": [
+      {
+        "committee_id": "C00800623",
+        "name": "DAVE MCCORMICK FOR US SENATE"
+      },
+      {
+        "committee_id": "C00851980",
+        "name": "FRIENDS OF DAVE MCCORMICK"
+      },
+      {
+        "committee_id": "C00829515",
+        "name": "MCCORMICK FOR PA SENATE REPUBLICAN NOMINEE FUND 2024"
+      }
+    ]
+  },
+  {
+    "name": "MCGUIGAN, JOHN DAVID",
+    "candidate_id": "S2PA00307",
+    "committees": [
+      {
+        "committee_id": "C00740563",
+        "name": "MCGUIGAN FOR PENNSYLVANIA"
+      }
+    ]
+  },
+  {
+    "name": "MELOY, SEAN",
+    "candidate_id": "H2PA17137",
+    "committees": [
+      {
+        "committee_id": "C00793612",
+        "name": "SEAN MELOY FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "MEUSER, DANIEL",
+    "candidate_id": "H8PA10147",
+    "committees": [
+      {
+        "committee_id": "C00439448",
+        "name": "MEUSER FOR CONGRESS"
+      },
+      {
+        "committee_id": "C00654723",
+        "name": "MEUSER FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "NELSON, JAMES D. DR.",
+    "candidate_id": "H4PA17158",
+    "committees": [
+      {
+        "committee_id": "C00837559",
+        "name": "JIM NELSON FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "ORTS, ERIC",
+    "candidate_id": "S2PA00547",
+    "committees": [
+      {
+        "committee_id": "C00783506",
+        "name": "FRIENDS OF ERIC ORTS"
+      }
+    ]
+  },
+  {
+    "name": "PATEL, BHAVINI",
+    "candidate_id": "H2PA18259",
+    "committees": [
+      {
+        "committee_id": "C00798900",
+        "name": "PATEL FOR PA"
+      }
+    ]
+  },
+  {
+    "name": "PERRY, SCOTT",
+    "candidate_id": "H2PA04135",
+    "committees": [
+      {
+        "committee_id": "C00510164",
+        "name": "PATRIOTS FOR PERRY"
+      }
+    ]
+  },
+  {
+    "name": "RATHMELL, GEORGE",
+    "candidate_id": "H2PA15123",
+    "committees": [
+      {
+        "committee_id": "C00800565",
+        "name": "GEORGE RATHMELL FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "RESCHENTHALER, GUY MR.",
+    "candidate_id": "H8PA18199",
+    "committees": [
+      {
+        "committee_id": "C00657833",
+        "name": "GUY FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "SANDS, CARLA H",
+    "candidate_id": "S2PA00554",
+    "committees": [
+      {
+        "committee_id": "C00783530",
+        "name": "SANDS FOR SENATE"
+      }
+    ]
+  },
+  {
+    "name": "SCANLON, MARY GAY",
+    "candidate_id": "H8PA07200",
+    "committees": [
+      {
+        "committee_id": "C00669358",
+        "name": "SCANLON FOR CONGRESS"
+      },
+      {
+        "committee_id": "C00688051",
+        "name": "SCANLON FOR VICTORY FUND"
+      }
+    ]
+  },
+  {
+    "name": "SELKER, MARTY",
+    "candidate_id": "S4PA00329",
+    "committees": [
+      {
+        "committee_id": "C00875302",
+        "name": "FRIENDS FOR MARTY SELKER"
+      }
+    ]
+  },
+  {
+    "name": "SMUCKER, LLOYD K.",
+    "candidate_id": "H6PA16320",
+    "committees": [
+      {
+        "committee_id": "C00599464",
+        "name": "SMUCKER FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "SNYDER, CRAIG",
+    "candidate_id": "S2PA00539",
+    "committees": [
+      {
+        "committee_id": "C00782938",
+        "name": "CRAIG SNYDER FOR SENATE"
+      }
+    ]
+  },
+  {
+    "name": "STAIBLE, TRICIA",
+    "candidate_id": "H2PA17111",
+    "committees": [
+      {
+        "committee_id": "C00791806",
+        "name": "TRICIA STAIBLE FOR CONGRESS"
+      }
+    ]
+  },
+  {
+    "name": "THOMPSON, GLENN MR.",
+    "candidate_id": "H8PA05071",
+    "committees": [
+      {
+        "committee_id": "C00444620",
+        "name": "FRIENDS OF GLENN THOMPSON"
+      },
+      {
+        "committee_id": "C00458562",
+        "name": "HOUSE REPUBLICAN FRESHMEN 2009"
+      },
+      {
+        "committee_id": "C00545806",
+        "name": "KELLY-THOMPSON VICTORY FUND"
+      },
+      {
+        "committee_id": "C00578716",
+        "name": "KELLY-THOMPSON VICTORY FUND"
+      }
+    ]
+  },
+  {
+    "name": "VOGEL, RON",
+    "candidate_id": "H2PA06171",
+    "committees": [
+      {
+        "committee_id": "C00799999",
+        "name": "RON VOGEL FOR CONGRESS"
+      }
+    ]
+  }
+]

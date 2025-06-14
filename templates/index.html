@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEC Candidate Reports</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 2rem;
+      max-width: 800px;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label, select, button {
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    select {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 1.5rem;
+      background: #f5f5f5;
+      padding: 1em;
+      border-radius: 4px;
+      white-space: pre-wrap;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Candidate Report Search</h2>
+
+  <form id="candidate-form">
+    <div class="form-group">
+      <label for="candidate">Select Candidate:</label>
+      <select id="candidate" required>
+        {% for c in candidates %}
+          <option value="{{ c.candidate_id }}">{{ c.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit">Choose Candidate</button>
+  </form>
+
+  <form id="committee-form" class="hidden">
+    <div class="form-group">
+      <label for="committee">Select Committee:</label>
+      <select id="committee" required></select>
+    </div>
+    <button type="submit">Get Report</button>
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    // DOM elements cache
+    const elements = {
+      candidateForm: document.getElementById("candidate-form"),
+      committeeForm: document.getElementById("committee-form"),
+      candidateSelect: document.getElementById("candidate"),
+      committeeSelect: document.getElementById("committee"),
+      output: document.getElementById("output")
+    };
+
+    // API endpoints
+    const API = {
+      committees: candidateId => `/get_committees/${candidateId}`,
+      reports: committeeId => `/get_reports/${committeeId}`
+    };
+
+    // Helper functions
+    const formatCurrency = value => `$${Number(value).toLocaleString()}`;
+
+    const showError = message => {
+      elements.output.textContent = `⚠️ ${message}`;
+    };
+
+    const fetchData = async url => {
+      const response = await fetch(url);
+      return response.json();
+    };
+
+    const renderReportSummary = data => {
+      if (data.error) {
+        showError(data.error);
+        return;
+      }
+
+      const html = `
+        <h3>📊 Latest Report Summary</h3>
+        <ul>
+          <li><strong>Period:</strong> ${data.coverage_start_date} → ${data.coverage_end_date}</li>
+          <li><strong>Report Type:</strong> ${data.report_type_full}</li>
+          <li><strong>Cash on Hand (Start):</strong> ${formatCurrency(data.cash_on_hand_beginning_period)}</li>
+          <li><strong>Cash on Hand (End):</strong> ${formatCurrency(data.cash_on_hand_end_period)}</li>
+        </ul>
+      `;
+
+      elements.output.innerHTML = html;
+    };
+
+    // Event handlers
+    const handleCandidateSubmit = async event => {
+      event.preventDefault();
+      const candidateId = elements.candidateSelect.value;
+
+      try {
+        const committees = await fetchData(API.committees(candidateId));
+
+        if (!committees.length) {
+          alert("No committees found for this candidate.");
+          return;
+        }
+
+        elements.committeeSelect.innerHTML = committees
+          .map(c => `<option value="${c.committee_id}">${c.name}</option>`)
+          .join("");
+
+        elements.committeeForm.classList.remove("hidden");
+        elements.output.innerHTML = "";
+      } catch (err) {
+        showError(`Failed to load committees: ${err.message}`);
+      }
+    };
+
+    const handleCommitteeSubmit = async event => {
+      event.preventDefault();
+      const committeeId = elements.committeeSelect.value;
+      elements.output.innerHTML = "🔍 Loading latest report...";
+
+      try {
+        const data = await fetchData(API.reports(committeeId));
+        renderReportSummary(data);
+      } catch (err) {
+        showError(`Unexpected error: ${err.message}`);
+      }
+    };
+
+    // Event listeners
+    elements.candidateForm.addEventListener("submit", handleCandidateSubmit);
+    elements.committeeForm.addEventListener("submit", handleCommitteeSubmit);
+  </script>
+</body>
+</html>

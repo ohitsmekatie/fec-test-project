@@ -1,62 +1,87 @@
-from flask import Flask, render_template, request, jsonify
+import json
+import logging
+import os
 import requests
+from flask import Flask, render_template, jsonify
+from functools import lru_cache
 
 app = Flask(__name__)
 
-API_KEY = "YeYWj7o3aJNobZiVgprIiZYyFU6XPsMUnk7P4Y2u"
-BASE_URL = "https://api.open.fec.gov/v1/"
+# Configuration constants
+FEC_API_KEY = os.environ.get("FEC_API_KEY", "YeYWj7o3aJNobZiVgprIiZYyFU6XPsMUnk7P4Y2u")
+FEC_BASE_URL = "https://api.open.fec.gov/v1"
+DATA_FILE_PATH = "data/pa_candidates_with_donations.json"
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Load candidate data
+def load_candidates():
+    try:
+        with open(DATA_FILE_PATH) as f:
+            candidates = [c for c in json.load(f) if c.get("committees")]
+        logger.info(f"Loaded {len(candidates)} candidates with committees")
+        return candidates
+    except Exception as e:
+        logger.error(f"Failed to load candidates: {e}")
+        return []
+
+all_candidates = load_candidates()
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    """Render the main application page."""
+    return render_template("index.html", candidates=all_candidates)
 
-# Route to search candidates (case-insensitive)
-@app.route("/search_candidate", methods=["GET"])
-def search_candidate():
-    name = request.args.get("name", "").strip().lower()
-    
-    if not name:
-        return jsonify({"error": "Candidate name is required"}), 400
+@app.route("/get_committees/<candidate_id>")
+def get_committees(candidate_id):
+    """Return committees associated with a candidate."""
+    candidate = next((c for c in all_candidates if c["candidate_id"] == candidate_id), None)
+    if not candidate:
+        logger.warning(f"No candidate found with ID: {candidate_id}")
+        return jsonify([])
 
-    url = f"{BASE_URL}candidates/search/?api_key={API_KEY}"
-    response = requests.get(url)
-    
-    if response.status_code != 200:
-        return jsonify({"error": "Failed to fetch data"}), 500
+    committees = candidate.get("committees", [])
+    logger.info(f"Found {len(committees)} committees for candidate {candidate_id}")
+    return jsonify(committees)
 
-    data = response.json()
-    candidates = [c for c in data.get("results", []) if name in c.get("name", "").lower()]
+@app.route("/get_reports/<committee_id>")
+def get_reports(committee_id):
+    """Fetch and return the latest report for a committee."""
+    try:
+        return jsonify(fetch_latest_report(committee_id))
+    except requests.exceptions.HTTPError as e:
+        logger.error(f"FEC API error for committee {committee_id}: {e}")
+        return jsonify({"error": f"FEC API error: {e}"}), 500
+    except Exception as e:
+        logger.error(f"Unexpected error for committee {committee_id}: {e}")
+        return jsonify({"error": f"Unexpected error: {str(e)}"}), 500
 
-    if not candidates:
-        return jsonify({"error": "No candidates found"}), 404
+@lru_cache(maxsize=100)
+def fetch_latest_report(committee_id):
+    """Fetch and return the latest report for a committee with caching."""
+    logger.info(f"Fetching reports for committee: {committee_id}")
 
-    return jsonify({"results": candidates})
+    res = requests.get(
+        f"{FEC_BASE_URL}/committee/{committee_id}/reports",
+        params={"api_key": FEC_API_KEY, "per_page": 10}
+    )
+    res.raise_for_status()
 
-# Route to get donations for a candidate with year filtering
-@app.route("/get_donations", methods=["GET"])
-def get_donations():
-    candidate_id = request.args.get("candidate_id")
-    year = request.args.get("year")
+    reports = res.json().get("results", [])
+    if not reports:
+        logger.warning(f"No reports found for committee: {committee_id}")
+        return {"error": f"No reports found for committee {committee_id}."}
 
-    if not candidate_id:
-        return jsonify({"error": "Candidate ID is required"}), 400
+    latest_report = sorted(
+        reports,
+        key=lambda r: r.get("coverage_end_date") or "",
+        reverse=True
+    )[0]
 
-    url = f"{BASE_URL}schedules/schedule_a/?candidate_id={candidate_id}&api_key={API_KEY}"
-    
-    if year:
-        url += f"&two_year_transaction_period={year}"
-
-    response = requests.get(url)
-
-    if response.status_code != 200:
-        return jsonify({"error": "Failed to fetch donation data"}), 500
-
-    donations = response.json().get("results", [])
-
-    if not donations:
-        return jsonify({"error": "No donations found for the selected year"}), 404
-
-    return jsonify({"results": donations})
+    logger.info(f"Found latest report for committee {committee_id}: {latest_report.get('report_type')}")
+    return latest_report
 
 if __name__ == "__main__":
     app.run(debug=True)
