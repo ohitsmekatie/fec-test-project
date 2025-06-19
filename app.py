@@ -8,7 +8,7 @@ from functools import lru_cache
 app = Flask(__name__)
 
 # Configuration constants
-FEC_API_KEY = os.environ.get("FEC_API_KEY", "YeYWj7o3aJNobZiVgprIiZYyFU6XPsMUnk7P4Y2u")
+FEC_API_KEY = "YeYWj7o3aJNobZiVgprIiZYyFU6XPsMUnk7P4Y2u"
 FEC_BASE_URL = "https://api.open.fec.gov/v1"
 DATA_FILE_PATH = "data/pa_candidates_with_donations.json"
 
